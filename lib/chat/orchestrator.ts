@@ -14,23 +14,22 @@ function buildStructuredDraft(knowledge: KnowledgeEntry, triage: TriageResult): 
         : "No immediate emergency signs are obvious from your message, but keep monitoring changes.";
 
   return `
-Supportive opener:
 ${knowledge.reassurance}
 
-What may be going on:
+### What may be going on
 ${knowledge.summary}
 
-What to do now:
+### What to do now
 ${knowledge.home_care_tips.map((tip) => `- ${tip}`).join("\n")}
 
-When to call provider:
+### When to call your provider
 ${knowledge.provider_follow_up.map((item) => `- ${item}`).join("\n")}
 
-When to seek urgent care:
-${urgencyLine}
+### When to seek urgent care
+- ${urgencyLine}
 - ${knowledge.red_flags.slice(0, 3).join("\n- ")}
 
-Follow-up suggestions:
+### Helpful next questions
 ${knowledge.suggested_questions.slice(0, 4).map((q) => `- ${q}`).join("\n")}
 `.trim();
 }
