@@ -1,5 +1,6 @@
 import { ChatWidget } from "@/components/chat/chat-widget";
 import { SAMPLE_CONVERSATIONS } from "@/data/sample-conversations";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,27 @@ export default function HomePage() {
           Safety-aware, evidence-informed conversational support for newborn care and postpartum
           recovery.
         </p>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="overflow-hidden rounded-3xl border border-naya-line bg-white shadow-soft">
+            <Image
+              src="/images/mother-baby.svg"
+              alt="Mother holding a newborn baby"
+              width={1200}
+              height={900}
+              className="h-auto w-full object-cover"
+              priority
+            />
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-naya-line bg-white shadow-soft">
+            <Image
+              src="/images/newborn-care.svg"
+              alt="Newborn care essentials in a soft scene"
+              width={1200}
+              height={900}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-2">
