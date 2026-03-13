@@ -15,6 +15,10 @@ const WELCOME_PROMPTS = [
   "What is normal sleep in week one?"
 ];
 
+function normalizeAssistantCopy(text: string): string {
+  return text.replace(/\bSupp\b/g, "Support");
+}
+
 interface UseChatSessionReturn {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
@@ -124,7 +128,10 @@ export function useChatSession(): UseChatSessionReturn {
       }
 
       const payload = (await response.json()) as ChatResponseBody;
-      const fullMessage = payload.reply;
+      const fullMessage = {
+        ...payload.reply,
+        content: normalizeAssistantCopy(payload.reply.content)
+      };
       trackEvent("chat_response_received", {
         triage: fullMessage.triageLevel,
         used_mock: payload.usedMock

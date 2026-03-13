@@ -8,10 +8,6 @@ import { ChatMessage } from "./chat-message";
 import { PromptChips } from "./prompt-chips";
 import { TypingIndicator } from "./typing-indicator";
 
-function formatTime(iso: string): string {
-  return new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
-}
-
 export function ChatWidget() {
   const {
     isOpen,
@@ -156,11 +152,13 @@ export function ChatWidget() {
                 </div>
               ) : (
                 messages.map((message) => (
-                  <div key={message.id} className="space-y-1">
+                  <div
+                    key={message.id}
+                    className={`space-y-1 flex flex-col ${
+                      message.role === "user" ? "items-end" : "items-start"
+                    }`}
+                  >
                     <ChatMessage message={message} onFollowUpSelect={(prompt) => void submitMessage(prompt)} />
-                    <p className="pl-1 text-[10px] uppercase tracking-wide text-naya-mauve/70">
-                      {message.role === "assistant" ? "Naya" : "You"} • {formatTime(message.createdAt)}
-                    </p>
                   </div>
                 ))
               )}
