@@ -113,7 +113,7 @@ export function ChatMessage({ message, onFollowUpSelect }: ChatMessageProps) {
 
       {message.followUps?.length ? (
         <div className="space-y-2">
-          <p className="text-xs font-medium text-naya-mauve">Helpful next questions</p>
+          <p className="text-xs font-medium text-naya-mauve">Helpful suggestions</p>
           <PromptChips prompts={message.followUps} onSelect={onFollowUpSelect} variant="subtle" />
         </div>
       ) : null}

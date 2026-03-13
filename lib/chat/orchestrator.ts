@@ -29,7 +29,7 @@ ${knowledge.provider_follow_up.map((item) => `- ${item}`).join("\n")}
 - ${urgencyLine}
 - ${knowledge.red_flags.slice(0, 3).join("\n- ")}
 
-### Helpful next questions
+### Helpful suggestions
 ${knowledge.suggested_questions.slice(0, 4).map((q) => `- ${q}`).join("\n")}
 `.trim();
 }
