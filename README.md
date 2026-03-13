@@ -1,4 +1,4 @@
-# NayaCare Chat Experience (Interview Demo)
+# NayaCare Chat Experience
 
 Premium, healthcare-aware chatbot module for NayaCare's fourth-trimester support experience.
 
@@ -16,7 +16,7 @@ Premium, healthcare-aware chatbot module for NayaCare's fourth-trimester support
 - Mobile-responsive and accessibility-minded interactions
 - Secure server-side OpenAI route with graceful mock fallback mode
 
-## Architecture (Interview Narrative)
+## Architecture
 
 `UI Layer` -> `API Route` -> `Safety/Triage` -> `Knowledge Retrieval` -> `LLM Rewriting` -> `Structured Response`
 
@@ -33,7 +33,7 @@ Premium, healthcare-aware chatbot module for NayaCare's fourth-trimester support
 4. Final payload returns triage tags, cards, sources, and follow-up chips
 5. Client renders rich UI blocks and escalation banners
 
-## Clinical Safety Model (Demo)
+## Clinical Safety Model
 
 - **Level 1**: General education and reassurance
 - **Level 2**: Call provider soon
@@ -90,9 +90,9 @@ types/
 ## Behavior With/Without API Key
 
 - **With `OPENAI_API_KEY`**: the app uses OpenAI to rewrite structured clinical guidance into polished Naya tone.
-- **Without key**: app stays fully functional using deterministic local guidance draft mode (great for interview reliability).
+- **Without key**: app stays fully functional using deterministic local guidance draft mode.
 
-## Fast Demo Script (Interview)
+## Recommended Validation Prompts
 
 Use these prompts in the widget:
 
@@ -102,7 +102,7 @@ Use these prompts in the widget:
 4. "My nipples hurt badly during breastfeeding."
 5. "My newborn only sleeps in short stretches. Is something wrong?"
 
-Call out:
+Expected behavior:
 - escalation label changes (`common`, `monitor`, `urgent`)
 - emergency banner behavior
 - source chips and follow-up prompts
@@ -110,4 +110,4 @@ Call out:
 
 ## Important Note
 
-This demo provides informational support only and does not replace emergency services or licensed clinical care.
+This product provides informational support only and does not replace emergency services or licensed clinical care.
